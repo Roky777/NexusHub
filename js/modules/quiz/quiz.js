@@ -133,3 +133,56 @@ const recentAnswers =
 // LOAD QUESTION
 
 
+function loadQuestion() {
+
+  const question = quizData[currentQuestion];
+
+  questionNumber.textContent =
+    `Question ${currentQuestion + 1} of ${quizData.length}`;
+
+  questionText.textContent =
+    question.question;
+
+  progressCount.textContent =
+    `${currentQuestion + 1} / ${quizData.length}`;
+
+  progressFill.style.width =
+    `${((currentQuestion + 1) / quizData.length) * 100}%`;
+
+  optionsContainer.innerHTML = "";
+
+  selectedAnswer = null;
+
+  question.options.forEach((option, index) => {
+
+    const optionDiv =
+      document.createElement("div");
+
+    optionDiv.classList.add("option");
+
+    optionDiv.textContent =
+      `${String.fromCharCode(65 + index)}. ${option}`;
+
+    optionDiv.addEventListener("click", () => {
+
+      document
+        .querySelectorAll(".option")
+        .forEach(opt =>
+          opt.classList.remove("selected")
+        );
+
+      optionDiv.classList.add("selected");
+
+      selectedAnswer = option;
+    });
+
+    optionsContainer.appendChild(optionDiv);
+  });
+
+  updateSummary();
+}
+
+
+// UPDATE SUMMARY
+
+
