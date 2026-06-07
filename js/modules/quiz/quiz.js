@@ -186,3 +186,27 @@ function loadQuestion() {
 // UPDATE SUMMARY
 
 
+function updateSummary() {
+
+  scoreElement.textContent = score;
+
+  const correct = score / 10;
+
+  correctCount.textContent = correct;
+
+  wrongCount.textContent =
+    currentQuestion - correct;
+
+  remainingCount.textContent =
+    quizData.length - currentQuestion;
+
+  percentage.textContent =
+    `${Math.round(
+      (score / (quizData.length * 10)) * 100
+    )}%`;
+}
+
+
+// NEXT QUESTION
+
+
