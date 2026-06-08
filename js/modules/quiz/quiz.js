@@ -210,3 +210,56 @@ function updateSummary() {
 // NEXT QUESTION
 
 
+nextBtn.addEventListener("click", () => {
+
+  if (!selectedAnswer) {
+
+    alert("Please select an answer");
+
+    return;
+  }
+
+  const current =
+    quizData[currentQuestion];
+
+  const answerStatus =
+    selectedAnswer === current.answer;
+
+  if (answerStatus) {
+    score += 10;
+  }
+
+  const answerDiv =
+    document.createElement("div");
+
+  answerDiv.classList.add("answer-item");
+
+  answerDiv.innerHTML = `
+      <span>Q${currentQuestion + 1}</span>
+      <span style="color:${
+        answerStatus ? "green" : "red"
+      }">
+        ${answerStatus ? "Correct" : "Wrong"}
+      </span>
+  `;
+
+  recentAnswers.appendChild(answerDiv);
+
+  currentQuestion++;
+
+  if (currentQuestion < quizData.length) {
+
+    loadQuestion();
+
+  } else {
+
+    showResult();
+
+  }
+
+});
+
+
+// TIMER
+
+
