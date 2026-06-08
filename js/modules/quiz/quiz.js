@@ -263,3 +263,28 @@ nextBtn.addEventListener("click", () => {
 // TIMER
 
 
+function startTimer() {
+
+  intervalId = setInterval(() => {
+
+    timer++;
+
+    const minutes =
+      String(Math.floor(timer / 60))
+      .padStart(2, "0");
+
+    const seconds =
+      String(timer % 60)
+      .padStart(2, "0");
+
+    timerElement.textContent =
+      `${minutes}:${seconds}`;
+
+  }, 1000);
+
+}
+
+
+// RESULT SCREEN
+
+
