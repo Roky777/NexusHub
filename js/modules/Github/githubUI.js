@@ -44,3 +44,47 @@ export function displayUser(user) {
     user.html_url;
 }
 
+export function displayRepositories(repoList) {
+
+  repoContainer.innerHTML = "";
+
+  if (!repoList.length) {
+    repoContainer.innerHTML =
+      "<p>No repositories found.</p>";
+    return;
+  }
+
+  repoList.forEach(repo => {
+
+    const card =
+      document.createElement("div");
+
+    card.classList.add("repo-card");
+
+    card.innerHTML = `
+      <h3>
+        <a href="${repo.html_url}" target="_blank">
+          ${repo.name}
+        </a>
+      </h3>
+
+      <p>
+        ${repo.description || "No description available"}
+      </p>
+
+      <div class="repo-info">
+        <span>⭐ ${repo.stargazers_count}</span>
+        <span>🍴 ${repo.forks_count}</span>
+        <span>${repo.language || "Unknown"}</span>
+        <span>
+          ${new Date(repo.updated_at).toLocaleDateString()}
+        </span>
+      </div>
+    `;
+
+    repoContainer.appendChild(card);
+
+  });
+
+}
+
