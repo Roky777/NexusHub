@@ -30,6 +30,41 @@
   max-width: 700px;
 }
 
+.news-hero{
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--accent-color)
+    );
+
+    color:white;
+
+    padding:3rem;
+
+    border-radius:var(--radius-lg);
+
+    margin-bottom:2rem;
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.news-hero h2{
+
+    font-size:var(--font-size-3xl);
+
+    margin-bottom:.5rem;
+
+}
+
+.news-hero p{
+
+    color:rgba(255,255,255,.8);
+
+}
+
 /* =====================================
    STATS
 ===================================== */
