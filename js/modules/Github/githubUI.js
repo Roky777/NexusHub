@@ -88,3 +88,64 @@ export function displayRepositories(repoList) {
 
 }
 
+export function displayLanguages(repoList) {
+
+  languageContainer.innerHTML = "";
+
+  const languageCount = {};
+
+  repoList.forEach(repo => {
+
+    if (repo.language) {
+
+      languageCount[repo.language] =
+        (languageCount[repo.language] || 0) + 1;
+    }
+  });
+
+  const entries =
+    Object.entries(languageCount);
+
+  if (!entries.length) {
+
+    languageContainer.innerHTML =
+      "<p>No language data available.</p>";
+
+    return;
+  }
+
+  const total = entries.reduce(
+    (sum, [, count]) => sum + count,
+    0
+  );
+
+  entries
+    .sort((a, b) => b[1] - a[1])
+    .forEach(([language, count]) => {
+
+      const percentage =
+        ((count / total) * 100).toFixed(1);
+
+      const div =
+        document.createElement("div");
+
+      div.classList.add("language-item");
+
+      div.textContent =
+        `${language} - ${percentage}%`;
+
+      languageContainer.appendChild(div);
+
+    });
+
+}
+
+export function clearUI() {
+
+  profileContainer.classList.add("hidden");
+
+  repoContainer.innerHTML = "";
+
+  languageContainer.innerHTML = "";
+
+}
