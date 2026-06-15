@@ -1,0 +1,370 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body{
+font-family: 'Poppins', sans-serif;
+background: #f4f6f9;
+color: #333;
+}
+
+.container{
+width: 90%;
+max-width: 1200px;
+margin: 30px auto;
+}
+
+/* Header */
+
+header{
+text-align: center;
+margin-bottom: 30px;
+}
+
+header h1{
+color: #24292e;
+font-size: 2.5rem;
+margin-bottom: 10px;
+}
+
+header p{
+color: #666;
+}
+
+/* Search Section */
+
+.search-section{
+display: flex;
+justify-content: center;
+gap: 10px;
+margin-bottom: 30px;
+}
+
+.search-section input{
+width: 400px;
+padding: 12px 15px;
+border: 1px solid #ccc;
+border-radius: 8px;
+outline: none;
+font-size: 16px;
+transition: all 0.3s ease;
+}
+
+.search-section input:focus{
+border-color: #0366d6;
+box-shadow: 0 0 8px rgba(3,102,214,0.3);
+}
+
+.search-section button{
+padding: 12px 25px;
+border: none;
+border-radius: 8px;
+background: #0366d6;
+color: white;
+cursor: pointer;
+font-size: 16px;
+font-weight: 500;
+transition: all 0.3s ease;
+}
+
+.search-section button:hover{
+background: #024ea2;
+transform: translateY(-2px);
+}
+
+/* Profile Card */
+
+.profile-card{
+background: white;
+border-radius: 15px;
+padding: 25px;
+display: flex;
+gap: 30px;
+align-items: center;
+margin-bottom: 30px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.profile-left img{
+width: 180px;
+height: 180px;
+border-radius: 50%;
+object-fit: cover;
+border: 4px solid #0366d6;
+}
+
+.profile-right{
+flex: 1;
+}
+
+.profile-right h2{
+margin-bottom: 10px;
+color: #24292e;
+}
+
+.profile-right p{
+color: #666;
+margin-bottom: 15px;
+}
+
+/* Stats */
+
+.stats{
+display: flex;
+gap: 20px;
+margin-bottom: 20px;
+flex-wrap: wrap;
+}
+
+.stat{
+background: #f8f9fa;
+padding: 15px 25px;
+border-radius: 10px;
+text-align: center;
+min-width: 110px;
+}
+
+.stat h3{
+color: #0366d6;
+margin-bottom: 5px;
+}
+
+.stat span{
+color: #666;
+font-size: 14px;
+}
+
+/* Extra Info */
+
+.extra-info{
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.extra-info a{
+text-decoration: none;
+color: #0366d6;
+font-weight: 600;
+}
+
+.extra-info a:hover{
+text-decoration: underline;
+}
+
+/* Language Section */
+
+.language-section{
+background: white;
+padding: 25px;
+border-radius: 15px;
+margin-bottom: 30px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.language-section h2{
+margin-bottom: 15px;
+}
+
+#languageContainer{
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+}
+
+.language-item{
+background: #0366d6;
+color: white;
+padding: 10px 15px;
+border-radius: 20px;
+transition: all 0.3s ease;
+}
+
+.language-item:hover{
+transform: scale(1.05);
+}
+
+/* Repository Controls */
+
+.repo-controls{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+}
+
+.repo-controls select{
+padding: 10px;
+border-radius: 8px;
+border: 1px solid #ccc;
+outline: none;
+}
+
+/* Repository Grid */
+
+#repoContainer{
+display: grid;
+grid-template-columns: repeat(auto-fill,minmax(320px,1fr));
+gap: 20px;
+}
+
+/* Repository Card */
+
+.repo-card{
+background: white;
+padding: 20px;
+border-radius: 15px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+transition: all 0.3s ease;
+}
+
+.repo-card:hover{
+transform: translateY(-5px);
+box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.repo-card h3{
+margin-bottom: 10px;
+}
+
+.repo-card h3 a{
+text-decoration: none;
+color: #0366d6;
+transition: color 0.3s ease;
+}
+
+.repo-card h3 a:hover{
+color: #024ea2;
+text-decoration: underline;
+}
+
+.repo-card p{
+color: #666;
+margin-bottom: 15px;
+min-height: 60px;
+}
+
+.repo-info{
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+font-size: 14px;
+}
+
+.repo-info span{
+background: #f2f4f7;
+padding: 6px 10px;
+border-radius: 8px;
+}
+
+/* Loading */
+
+#loading{
+text-align: center;
+font-size: 18px;
+margin-bottom: 20px;
+color: #0366d6;
+font-weight: 600;
+}
+
+/* Error */
+
+#error{
+background: #ffe5e5;
+color: #d63031;
+padding: 15px;
+border-radius: 10px;
+margin-bottom: 20px;
+text-align: center;
+font-weight: 500;
+}
+
+/* Utility */
+
+.hidden{
+display: none !important;
+}
+
+/* Fade Animation */
+
+.profile-card,
+.language-section,
+.repo-card{
+animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn{
+from{
+opacity: 0;
+transform: translateY(15px);
+}
+
+to{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+width: 8px;
+}
+
+::-webkit-scrollbar-track{
+background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb{
+background: #0366d6;
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #024ea2;
+}
+
+/* Responsive */
+
+@media (max-width: 768px){
+
+
+.search-section{
+    flex-direction: column;
+}
+
+.search-section input{
+    width: 100%;
+}
+
+.profile-card{
+    flex-direction: column;
+    text-align: center;
+}
+
+.stats{
+    justify-content: center;
+}
+
+.repo-controls{
+    flex-direction: column;
+    gap: 15px;
+}
+
+.repo-card{
+    padding: 15px;
+}
+
+.repo-info{
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.stat{
+    min-width: 90px;
+}
+
+}
