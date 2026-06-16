@@ -1,0 +1,147 @@
+.quiz-stats{
+    display:flex;
+    justify-content:flex-end;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.stat-card{
+    background:#fff;
+    padding:15px 20px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    min-width:140px;
+    border:1px solid #e5e7eb;
+}
+
+.quiz-layout{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:20px;
+}
+
+.quiz-card,
+.summary-card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    padding:25px;
+}
+
+.question-info{
+    margin-bottom:20px;
+}
+
+.progress-bar{
+    width:100%;
+    height:8px;
+    background:#e5e7eb;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:10px;
+}
+
+#progress-fill{
+    width:10%;
+    height:100%;
+    background:#2563eb;
+    transition:0.3s;
+}
+
+#question-text{
+    margin:25px 0;
+    line-height:1.5;
+}
+
+.option{
+    padding:16px;
+    border:1px solid #d1d5db;
+    border-radius:12px;
+    margin-bottom:12px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.option:hover{
+    background:#f3f8ff;
+}
+
+.option.selected{
+    border-color:#2563eb;
+    background:#eff6ff;
+}
+
+#next-btn{
+    margin-top:15px;
+    border:none;
+    background:#2563eb;
+    color:white;
+    padding:12px 24px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.summary-card h3{
+    margin-bottom:20px;
+}
+
+.score-circle{
+    width:180px;
+    height:180px;
+    border:10px solid #22c55e;
+    border-radius:50%;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:2rem;
+    font-weight:bold;
+}
+
+.summary-stats{
+    display:flex;
+    justify-content:space-between;
+    margin-top:25px;
+    text-align:center;
+}
+
+#recent-answers{
+    margin-top:20px;
+}
+
+@media (max-width: 992px){
+
+    .quiz-layout{
+        grid-template-columns:1fr;
+    }
+
+    .quiz-stats{
+        justify-content:flex-start;
+        flex-wrap:wrap;
+    }
+
+}
+
+@media (max-width: 576px){
+
+    .quiz-stats{
+        flex-direction:column;
+    }
+
+    .stat-card{
+        width:100%;
+    }
+
+    .summary-stats{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .score-circle{
+        width:140px;
+        height:140px;
+    }
+
+}
