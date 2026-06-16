@@ -10,8 +10,11 @@
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/layout.css" />
     <link rel="stylesheet" href="./css/home.css" />
-    <link rel="stylesheet" href="./css/news.css"/>
-    <link rel="stylesheet" href="./css/quiz.css">
+    <link rel="stylesheet" href="./css/quiz.css" />
+    <link rel="stylesheet" href="./css/expense.css" />
+    <link rel="stylesheet" href="./css/news.css" />
+    <link rel="stylesheet" href="./css/github.css" />
+    <link rel="stylesheet" href="./css/kanban.css" />
   </head>
 
   <body>
@@ -133,110 +136,92 @@
 
         <!-- QUIZ -->
         <section id="quiz" class="view" tabindex="-1" hidden>
-  <div class="module-container">
+          <div class="module-container">
+            <div class="module-header">
+              <h2>Quiz Module</h2>
+              <p>Test your knowledge and challenge yourself.</p>
+            </div>
 
-    <div class="module-header">
-      <h2>Quiz Module</h2>
-      <p>Test your knowledge and challenge yourself.</p>
-    </div>
+            <!-- Top Stats -->
+            <div class="quiz-stats">
+              <div class="stat-card">
+                <span>🏆</span>
+                <div>
+                  <small>Score</small>
+                  <h3 id="score">0</h3>
+                </div>
+              </div>
 
-    <!-- Top Stats -->
-    <div class="quiz-stats">
+              <div class="stat-card">
+                <span>🎯</span>
+                <div>
+                  <small>Progress</small>
+                  <h3 id="progress-count">0 / 10</h3>
+                </div>
+              </div>
 
-      <div class="stat-card">
-        <span>🏆</span>
-        <div>
-          <small>Score</small>
-          <h3 id="score">0</h3>
-        </div>
-      </div>
+              <div class="stat-card">
+                <span>⏰</span>
+                <div>
+                  <small>Time</small>
+                  <h3 id="timer">00:00</h3>
+                </div>
+              </div>
+            </div>
 
-      <div class="stat-card">
-        <span>🎯</span>
-        <div>
-          <small>Progress</small>
-          <h3 id="progress-count">0 / 10</h3>
-        </div>
-      </div>
+            <!-- Main Area -->
+            <div class="quiz-layout">
+              <!-- Question Section -->
+              <div class="quiz-card">
+                <div class="question-info">
+                  <h4 id="question-number">Question 1 of 10</h4>
 
-      <div class="stat-card">
-        <span>⏰</span>
-        <div>
-          <small>Time</small>
-          <h3 id="timer">00:00</h3>
-        </div>
-      </div>
+                  <div class="progress-bar">
+                    <div id="progress-fill"></div>
+                  </div>
+                </div>
 
-    </div>
+                <h3 id="question-text">Question will come from JavaScript</h3>
 
-    <!-- Main Area -->
-    <div class="quiz-layout">
+                <div id="options-container">
+                  <!-- JS will create options here -->
+                </div>
 
-      <!-- Question Section -->
-      <div class="quiz-card">
+                <button id="next-btn">Next Question →</button>
+              </div>
 
-        <div class="question-info">
-          <h4 id="question-number">Question 1 of 10</h4>
+              <!-- Summary Section -->
+              <div class="summary-card">
+                <h3>Quiz Summary</h3>
 
-          <div class="progress-bar">
-            <div id="progress-fill"></div>
+                <div class="score-circle">
+                  <span id="percentage">0%</span>
+                </div>
+
+                <div class="summary-stats">
+                  <div>
+                    <h4 id="correct-count">0</h4>
+                    <p>Correct</p>
+                  </div>
+
+                  <div>
+                    <h4 id="wrong-count">0</h4>
+                    <p>Wrong</p>
+                  </div>
+
+                  <div>
+                    <h4 id="remaining-count">10</h4>
+                    <p>Remaining</p>
+                  </div>
+                </div>
+
+                <div id="recent-answers">
+                  <!-- JS -->
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <h3 id="question-text">
-          Question will come from JavaScript
-        </h3>
-
-        <div id="options-container">
-
-          <!-- JS will create options here -->
-
-        </div>
-
-        <button id="next-btn">
-          Next Question →
-        </button>
-
-      </div>
-
-      <!-- Summary Section -->
-      <div class="summary-card">
-
-        <h3>Quiz Summary</h3>
-
-        <div class="score-circle">
-          <span id="percentage">0%</span>
-        </div>
-
-        <div class="summary-stats">
-
-          <div>
-            <h4 id="correct-count">0</h4>
-            <p>Correct</p>
-          </div>
-
-          <div>
-            <h4 id="wrong-count">0</h4>
-            <p>Wrong</p>
-          </div>
-
-          <div>
-            <h4 id="remaining-count">10</h4>
-            <p>Remaining</p>
-          </div>
-
-        </div>
-
-        <div id="recent-answers">
-          <!-- JS -->
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
+        </section>
 
         <!-- EXPENSE -->
         <section id="expense" class="view" tabindex="-1" hidden>
@@ -248,81 +233,159 @@
           </div>
         </section>
 
-
         <!-- NEWS -->
-<section id="news" class="view" tabindex="-1" hidden>
-    <div class="module-container">
+        <section id="news" class="view" tabindex="-1" hidden>
+          <div class="module-container">
+            <div class="module-header">
+              <h2>Daily News Hub</h2>
+              <p>Discover the latest headlines from around the world.</p>
+            </div>
 
-        <div class="module-header">
-            <h2>News Feed</h2>
-            <p>Stay updated with the latest headlines.</p>
-        </div>
-
-        <!-- Search -->
-        <div class="news-search">
-            <input
+            <!-- Search -->
+            <div class="news-search">
+              <input
                 type="text"
                 id="search-input"
-                placeholder="Search news..."
-            />
-            <button id="search-btn">
-                Search
-            </button>
-        </div>
+                placeholder="Search news..." />
+              <button id="search-btn">Search</button>
+            </div>
 
-        <!-- Categories -->
-        <div class="news-categories">
-            <button class="category-btn active" data-category="general">
+            <!-- Categories -->
+            <div class="news-categories">
+              <button class="category-btn active" data-category="general">
                 General
-            </button>
+              </button>
 
-            <button class="category-btn" data-category="technology">
+              <button class="category-btn" data-category="technology">
                 Technology
-            </button>
+              </button>
 
-            <button class="category-btn" data-category="business">
+              <button class="category-btn" data-category="business">
                 Business
-            </button>
+              </button>
 
-            <button class="category-btn" data-category="sports">
+              <button class="category-btn" data-category="sports">
                 Sports
-            </button>
+              </button>
 
-            <button class="category-btn" data-category="health">
+              <button class="category-btn" data-category="health">
                 Health
-            </button>
+              </button>
 
-            <button class="category-btn" data-category="science">
+              <button class="category-btn" data-category="science">
                 Science
-            </button>
+              </button>
 
-            <button class="category-btn" data-category="entertainment">
+              <button class="category-btn" data-category="entertainment">
                 Entertainment
-            </button>
-        </div>
+              </button>
+            </div>
 
-        <!-- Loading Spinner -->
-        <div id="news-loader" class="news-loader hidden">
-            <div class="spinner"></div>
-        </div>
+            <!-- Loading Spinner -->
+            <div id="news-loader" class="news-loader hidden">
+              <div class="spinner"></div>
+            </div>
 
-        <!-- Error Message -->
-        <div id="news-error" class="news-error"></div>
+            <!-- Error Message -->
+            <div id="news-error" class="news-error"></div>
 
-        <!-- News Cards -->
-        <div id="news-container" class="news-grid">
+            <!-- News Cards -->
+            <div id="news-container" class="news-grid"></div>
+          </div>
+        </section>
 
-        </div>
-    </div>
-</section>
-
+        <!-- GITHUB -->
         <!-- GITHUB -->
         <section id="github" class="view" tabindex="-1" hidden>
           <div class="module-container">
             <div class="module-header">
-              <h2>GitHub Explorer</h2>
-              <p>Explore repositories, users and projects.</p>
+              <h2>GitHub User Explorer</h2>
+              <p>Search and analyze any GitHub developer profile</p>
             </div>
+
+            <!-- Search Section -->
+            <section class="search-section">
+              <input
+                type="text"
+                id="usernameInput"
+                placeholder="Enter GitHub username..." />
+
+              <button id="searchBtn">Search</button>
+            </section>
+
+            <!-- Loading -->
+            <div id="loading" class="hidden">
+              <p>Loading profile...</p>
+            </div>
+
+            <!-- Error -->
+            <div id="error" class="hidden"></div>
+
+            <!-- Profile Card -->
+            <section id="profileContainer" class="hidden">
+              <div class="profile-card">
+                <div class="profile-left">
+                  <img
+                    id="avatar"
+                    src="https://via.placeholder.com/150"
+                    alt="User Avatar" />
+                </div>
+
+                <div class="profile-right">
+                  <h2 id="name">Developer Name</h2>
+
+                  <p id="bio">Developer bio will appear here.</p>
+
+                  <div class="stats">
+                    <div class="stat">
+                      <h3 id="followers">0</h3>
+                      <span>Followers</span>
+                    </div>
+
+                    <div class="stat">
+                      <h3 id="following">0</h3>
+                      <span>Following</span>
+                    </div>
+
+                    <div class="stat">
+                      <h3 id="repos">0</h3>
+                      <span>Repositories</span>
+                    </div>
+                  </div>
+
+                  <div class="extra-info">
+                    <p>📍 <span id="location">Location</span></p>
+
+                    <a id="profileLink" href="#" target="_blank">
+                      View GitHub Profile
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Language Breakdown -->
+            <section class="language-section">
+              <h2>Language Breakdown</h2>
+
+              <div id="languageContainer"></div>
+            </section>
+
+            <!-- Repository Controls -->
+            <section class="repo-controls">
+              <h2>Repositories</h2>
+
+              <select id="sortRepos">
+                <option value="updated">Sort by Recently Updated</option>
+
+                <option value="stars">Sort by Stars</option>
+
+                <option value="name">Sort by Name</option>
+              </select>
+            </section>
+
+            <!-- Repository List -->
+            <section id="repoContainer"></section>
           </div>
         </section>
 
@@ -333,6 +396,9 @@
               <h2>Kanban Board</h2>
               <p>Organize tasks and workflows visually.</p>
             </div>
+
+            <!-- Board: columns are rendered here by JS -->
+            <div id="kanban-board" class="kanban-board"></div>
           </div>
         </section>
       </main>
@@ -345,7 +411,9 @@
     </script>
 
     <script type="module" src="./js/app.js"></script>
+    <script type="module" src="./js/modules/quiz/quiz.js"></script>
     <script type="module" src="./js/modules/news/news.js"></script>
-    <script src="./js/modules/quiz/quiz.js"></script>
+    <script type="module" src="./js/modules/Github/github.js"></script>
+    <script type="module" src="./js/modules/kanban/kanban.js"></script>
   </body>
 </html>
