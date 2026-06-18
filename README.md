@@ -3,7 +3,7 @@
 
 NexusHub is a unified productivity dashboard that brings together six independent modules into a single, clean interface — built entirely with **vanilla HTML, CSS, and JavaScript** (no frameworks, no build step).
 
-🔗 **Live Demo:** [nexushubdashboard.netlify.app](https://nexushubdashboard.netlify.app)
+🔗 **Live Demo:** [https://nexus-hub-team.vercel.app/](https://nexus-hub-team.vercel.app/)
 
 ---
 
