@@ -19,7 +19,7 @@
   flex: 0 0 280px;
   display: flex;
   flex-direction: column;
-  background: #f1f3f5;
+  background: var(--surface-hover-color);
   border-radius: var(--radius-sm);
   overflow: hidden;
 }
@@ -80,7 +80,7 @@
 }
 
 .kanban-card-list.drag-over {
-  background: #e7eaee;
+  background: var(--surface-hover-color);
 }
 
 /* =====================================

@@ -103,6 +103,10 @@ button {
 
   font: inherit;
 
+  /* Inherit the theme text color so buttons stay readable in
+     dark mode (browsers default button text to black otherwise). */
+  color: inherit;
+
   background: none;
 
   cursor: pointer;

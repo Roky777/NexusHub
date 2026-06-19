@@ -16,7 +16,7 @@ margin-bottom: 30px;
 .search-section input{
 width: 400px;
 padding: 12px 15px;
-border: 1px solid #ccc;
+border: 1px solid var(--border-color);
 border-radius: 8px;
 outline: none;
 font-size: 16px;
@@ -48,7 +48,7 @@ transform: translateY(-2px);
 /* Profile Card */
 
 .profile-card{
-background: white;
+background: var(--surface-color);
 border-radius: 15px;
 padding: 25px;
 display: flex;
@@ -72,11 +72,11 @@ flex: 1;
 
 .profile-right h2{
 margin-bottom: 10px;
-color: #24292e;
+color: var(--text-color);
 }
 
 .profile-right p{
-color: #666;
+color: var(--text-light-color);
 margin-bottom: 15px;
 }
 
@@ -90,7 +90,7 @@ flex-wrap: wrap;
 }
 
 .stat{
-background: #f8f9fa;
+background: var(--surface-hover-color);
 padding: 15px 25px;
 border-radius: 10px;
 text-align: center;
@@ -103,7 +103,7 @@ margin-bottom: 5px;
 }
 
 .stat span{
-color: #666;
+color: var(--text-light-color);
 font-size: 14px;
 }
 
@@ -128,7 +128,7 @@ text-decoration: underline;
 /* Language Section */
 
 .language-section{
-background: white;
+background: var(--surface-color);
 padding: 25px;
 border-radius: 15px;
 margin-bottom: 30px;
@@ -169,7 +169,7 @@ margin-bottom: 20px;
 .repo-controls select{
 padding: 10px;
 border-radius: 8px;
-border: 1px solid #ccc;
+border: 1px solid var(--border-color);
 outline: none;
 }
 
@@ -184,7 +184,7 @@ gap: 20px;
 /* Repository Card */
 
 .repo-card{
-background: white;
+background: var(--surface-color);
 padding: 20px;
 border-radius: 15px;
 box-shadow: 0 4px 15px rgba(0,0,0,0.08);
@@ -212,7 +212,7 @@ text-decoration: underline;
 }
 
 .repo-card p{
-color: #666;
+color: var(--text-light-color);
 margin-bottom: 15px;
 min-height: 60px;
 }
@@ -225,7 +225,7 @@ font-size: 14px;
 }
 
 .repo-info span{
-background: #f2f4f7;
+background: var(--surface-hover-color);
 padding: 6px 10px;
 border-radius: 8px;
 }
@@ -243,8 +243,8 @@ font-weight: 600;
 /* Error */
 
 #error{
-background: #ffe5e5;
-color: #d63031;
+background: rgba(239, 68, 68, 0.12);
+color: var(--danger-color);
 padding: 15px;
 border-radius: 10px;
 margin-bottom: 20px;
@@ -286,7 +286,7 @@ width: 8px;
 }
 
 ::-webkit-scrollbar-track{
-background: #f1f1f1;
+background: var(--surface-hover-color);
 }
 
 ::-webkit-scrollbar-thumb{

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/layout.css" />
     <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/portfolio.css" />
     <link rel="stylesheet" href="./css/quiz.css" />
     <link rel="stylesheet" href="./css/expense.css" />
     <link rel="stylesheet" href="./css/news.css" />
@@ -44,6 +45,14 @@
           <p>One Dashboard. Six Powerful Tools.</p>
         </div>
       </div>
+
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Toggle light or dark theme">
+        🌙
+      </button>
     </header>
 
     <!-- Dashboard -->
@@ -100,37 +109,102 @@
 
       <!-- Main Content -->
       <main id="main-content" class="content">
-        <!-- HOME -->
+        <!-- HOME (Portfolio) -->
         <section id="home" class="view active-view" tabindex="-1">
-          <div class="home-hero">
-            <h2>Welcome Back 👋</h2>
+          <div class="portfolio">
+            <!-- In-page navigation -->
+            <nav class="pf-nav" aria-label="Portfolio sections">
+              <span class="pf-brand">Team Nexus</span>
 
-            <p>
-              NexusHub brings together six powerful productivity tools into one
-              unified workspace.
-            </p>
-          </div>
+              <button
+                id="pf-nav-toggle"
+                class="pf-nav-toggle"
+                type="button"
+                aria-label="Toggle portfolio menu">
+                ☰
+              </button>
 
-          <div class="stats-grid">
-            <div class="card">
-              <h3>Projects</h3>
-              <div class="number">6</div>
-            </div>
+              <ul id="pf-nav-links" class="pf-nav-links">
+                <li><a href="#pf-hero" class="pf-link active">Home</a></li>
+                <li><a href="#pf-about" class="pf-link">About</a></li>
+                <li><a href="#pf-skills" class="pf-link">Skills</a></li>
+                <li><a href="#pf-projects" class="pf-link">Projects</a></li>
+                <li><a href="#pf-contact" class="pf-link">Contact</a></li>
+              </ul>
+            </nav>
 
-            <div class="card">
-              <h3>Team Members</h3>
-              <div class="number">6</div>
-            </div>
+            <!-- Hero -->
+            <section id="pf-hero" class="pf-section pf-hero reveal">
+              <h1>Hi, we're <span>Team Nexus</span></h1>
+              <p class="pf-role">Front-End Web Developers</p>
+              <p class="pf-intro">
+                We build clean, responsive web apps with vanilla HTML, CSS, and
+                JavaScript — no frameworks, just fundamentals done well.
+              </p>
+              <div class="pf-hero-actions">
+                <a href="#pf-projects" class="pf-btn pf-btn-primary pf-link"
+                  >View Projects</a
+                >
+                <a href="#pf-contact" class="pf-btn pf-btn-ghost pf-link"
+                  >Contact</a
+                >
+              </div>
+            </section>
 
-            <div class="card">
-              <h3>Modules</h3>
-              <div class="number">6</div>
-            </div>
+            <!-- About -->
+            <section id="pf-about" class="pf-section reveal">
+              <h2>About</h2>
+              <p>
+                We are Team Nexus, a group of developers learning by building.
+                NexusHub is our capstone — six independent tools unified into one
+                dashboard. We focus on clean code structure, accessibility, and
+                responsive design across every screen size.
+              </p>
+            </section>
 
-            <div class="card">
-              <h3>Status</h3>
-              <div class="number">Active</div>
-            </div>
+            <!-- Skills -->
+            <section id="pf-skills" class="pf-section reveal">
+              <h2>Skills</h2>
+              <div id="pf-skills-list" class="pf-skills"></div>
+            </section>
+
+            <!-- Projects -->
+            <section id="pf-projects" class="pf-section reveal">
+              <h2>Projects</h2>
+              <div id="pf-projects-list" class="pf-projects"></div>
+            </section>
+
+            <!-- Contact -->
+            <section id="pf-contact" class="pf-section reveal">
+              <h2>Contact</h2>
+              <p>Have a question or want to work together? Drop us a message.</p>
+
+              <form id="pf-contact-form" class="pf-form" novalidate>
+                <div class="pf-field">
+                  <label for="pf-name">Name</label>
+                  <input id="pf-name" name="name" type="text" />
+                  <span class="pf-error" data-error-for="name"></span>
+                </div>
+
+                <div class="pf-field">
+                  <label for="pf-email">Email</label>
+                  <input id="pf-email" name="email" type="email" />
+                  <span class="pf-error" data-error-for="email"></span>
+                </div>
+
+                <div class="pf-field">
+                  <label for="pf-message">Message</label>
+                  <textarea id="pf-message" name="message" rows="4"></textarea>
+                  <span class="pf-error" data-error-for="message"></span>
+                </div>
+
+                <button type="submit" class="pf-btn pf-btn-primary">
+                  Send Message
+                </button>
+
+                <p id="pf-form-success" class="pf-form-success"></p>
+              </form>
+            </section>
           </div>
         </section>
 
@@ -524,6 +598,8 @@
     </script>
 
     <script type="module" src="./js/app.js"></script>
+    <script type="module" src="./js/modules/theme/theme.js"></script>
+    <script type="module" src="./js/modules/portfolio/portfolio.js"></script>
     <script type="module" src="./js/modules/expense/expense.js"></script>
     <script type="module" src="./js/modules/quiz/quiz.js"></script>
     <script type="module" src="./js/modules/news/news.js"></script>

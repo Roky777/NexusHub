@@ -47,6 +47,7 @@ CATEGORY BUTTONS
 
 .category-btn {
     background: var(--surface-color);
+    color: var(--text-color);
     border: 1px solid var(--border-color);
     padding: 0.8rem 1.5rem;
     border-radius: 999px;

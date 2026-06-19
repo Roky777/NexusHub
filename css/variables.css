@@ -133,3 +133,24 @@
   --z-sidebar: 900;
   --z-modal: 1000;
 }
+
+/* =====================================
+   DARK THEME
+   The header toggle adds the `dark` class to <html>.
+   Overriding the surface/text/border tokens here flips
+   every component that uses them automatically.
+===================================== */
+
+html.dark {
+  --background-color: #0b1220;
+  --surface-color: #111827;
+  --surface-hover-color: #1e293b;
+
+  --text-color: #f1f5f9;
+  --text-secondary-color: #cbd5e1;
+  --text-light-color: #94a3b8;
+  --text-muted-color: #64748b;
+
+  --border-color: #1f2937;
+  --border-hover-color: #334155;
+}

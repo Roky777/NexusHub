@@ -1,0 +1,350 @@
+/* =====================================
+   PORTFOLIO (Home view)
+   Self-contained theme variables so the light/dark
+   toggle only affects the portfolio, not the dashboard.
+===================================== */
+
+.portfolio {
+  --pf-bg: #ffffff;
+  --pf-surface: #f8fafc;
+  --pf-text: #0f172a;
+  --pf-muted: #64748b;
+  --pf-accent: #3b82f6;
+  --pf-border: #e5e7eb;
+
+  background: var(--pf-bg);
+  color: var(--pf-text);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* Follows the global dark theme (header toggle adds .dark to <html>). */
+html.dark .portfolio {
+  --pf-bg: #0f172a;
+  --pf-surface: #1e293b;
+  --pf-text: #f1f5f9;
+  --pf-muted: #94a3b8;
+  --pf-accent: #60a5fa;
+  --pf-border: #334155;
+}
+
+/* =====================================
+   IN-PAGE NAV
+===================================== */
+
+.pf-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: 0.85rem 1.25rem;
+  background: var(--pf-bg);
+  border-bottom: 1px solid var(--pf-border);
+}
+
+.pf-brand {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  color: var(--pf-text);
+}
+
+.pf-nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--pf-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.pf-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.pf-link {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+  color: var(--pf-muted);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+}
+
+.pf-link:hover {
+  color: var(--pf-text);
+  background: var(--pf-surface);
+}
+
+.pf-link.active {
+  color: var(--pf-accent);
+  background: var(--pf-surface);
+}
+
+/* =====================================
+   SECTIONS
+===================================== */
+
+.pf-section {
+  padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 5vw, 3rem);
+  border-bottom: 1px solid var(--pf-border);
+}
+
+.pf-section h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--pf-text);
+  margin-bottom: var(--space-md);
+}
+
+/* Fluid typography helper */
+.pf-section p {
+  color: var(--pf-muted);
+  line-height: 1.7;
+  max-width: 65ch;
+}
+
+/* =====================================
+   HERO
+===================================== */
+
+.pf-hero {
+  text-align: center;
+  padding-block: clamp(3rem, 9vw, 6.5rem);
+}
+
+.pf-hero h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: var(--pf-text);
+  margin-bottom: 0.5rem;
+}
+
+.pf-hero h1 span {
+  color: var(--pf-accent);
+}
+
+.pf-role {
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  font-weight: var(--font-weight-semibold);
+  color: var(--pf-accent);
+  margin: 0 auto 0.75rem;
+}
+
+.pf-intro {
+  margin: 0 auto var(--space-lg);
+  text-align: center;
+}
+
+.pf-hero-actions {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pf-btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+}
+
+.pf-btn-primary {
+  background: var(--pf-accent);
+  color: #fff;
+}
+
+.pf-btn-ghost {
+  border: 1px solid var(--pf-border);
+  color: var(--pf-text);
+}
+
+.pf-btn:hover {
+  opacity: 0.9;
+}
+
+/* =====================================
+   SKILLS
+===================================== */
+
+.pf-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.pf-skill {
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-xl);
+  background: var(--pf-surface);
+  border: 1px solid var(--pf-border);
+  color: var(--pf-text);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+/* =====================================
+   PROJECTS (responsive grid)
+===================================== */
+
+.pf-projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-md);
+}
+
+.pf-project {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background: var(--pf-surface);
+  border: 1px solid var(--pf-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.pf-project h3 {
+  color: var(--pf-text);
+  font-size: var(--font-size-lg);
+}
+
+.pf-project p {
+  font-size: var(--font-size-sm);
+}
+
+.pf-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+
+.pf-tag {
+  font-size: var(--font-size-xs);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  background: var(--pf-bg);
+  border: 1px solid var(--pf-border);
+  color: var(--pf-muted);
+}
+
+.pf-project-links {
+  display: flex;
+  gap: var(--space-sm);
+  padding-top: 0.4rem;
+}
+
+.pf-project-links a {
+  color: var(--pf-accent);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+}
+
+/* =====================================
+   CONTACT FORM
+===================================== */
+
+.pf-form {
+  display: grid;
+  gap: var(--space-sm);
+  max-width: 520px;
+}
+
+.pf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.pf-field label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--pf-text);
+}
+
+.pf-field input,
+.pf-field textarea {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--pf-border);
+  border-radius: var(--radius-sm);
+  background: var(--pf-bg);
+  color: var(--pf-text);
+  font: inherit;
+}
+
+.pf-field input:focus,
+.pf-field textarea:focus {
+  outline: none;
+  border-color: var(--pf-accent);
+}
+
+.pf-error {
+  min-height: 1rem;
+  font-size: var(--font-size-xs);
+  color: var(--danger-color);
+}
+
+.pf-form-success {
+  color: var(--success-color);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+}
+
+/* =====================================
+   SCROLL-REVEAL
+===================================== */
+
+/* Hidden state only applies once JS marks the portfolio ready,
+   so the content is always visible if JS is disabled or delayed. */
+.portfolio.js-ready .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.portfolio.js-ready .reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =====================================
+   RESPONSIVE (mobile-first fallbacks)
+===================================== */
+
+@media (max-width: 640px) {
+  .pf-nav-toggle {
+    display: block;
+  }
+
+  .pf-nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+    padding: var(--space-sm);
+    background: var(--pf-bg);
+    border-bottom: 1px solid var(--pf-border);
+    display: none;
+  }
+
+  .pf-nav-links.open {
+    display: flex;
+  }
+
+  .pf-link {
+    text-align: center;
+  }
+}
